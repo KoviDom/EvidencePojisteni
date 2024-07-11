@@ -6,8 +6,7 @@ import java.util.Scanner;
 public class EvidencePojistenych {
 
     Scanner scanner = new Scanner(System.in);
-    ArrayList<String> seznamPojistenych = new ArrayList<>();
-    protected Pojisteny pojisteny;
+    ArrayList<Pojisteny> seznamPojistenych = new ArrayList<>();
 
     public void pridatPojistenyho() {
 
@@ -20,7 +19,8 @@ public class EvidencePojistenych {
         System.out.println("Zadejte věk: ");
         int vek = Integer.parseInt(scanner.nextLine());
 
-        seznamPojistenych.add(pojisteny.toString());
+        Pojisteny pojisteny = new Pojisteny(jmeno, prijmeni, vek, telefonniCislo);
+        seznamPojistenych.add(pojisteny);
 
         System.out.println();
         System.out.println("Data byla uložena. Pokračujte libovolnou klávesou...");
@@ -30,10 +30,16 @@ public class EvidencePojistenych {
 
     public void vypsatVsechnyPojistene() {
 
-        System.out.println("Seznam všech pojištěných:");
-        for (String seznam : seznamPojistenych) {
-            System.out.println(seznam);
+        if (seznamPojistenych.isEmpty()) {
+            System.out.println("Seznam je prázdný.");
+        } else {
+            System.out.println("Seznam všech pojištěných:");
+            for (Pojisteny seznam : seznamPojistenych) {
+                System.out.println(seznam);
+            }
         }
+        System.out.println("Pokračujte libovolnou klávesou...");
+        System.out.println();
 
     }
 
