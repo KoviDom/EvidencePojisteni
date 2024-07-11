@@ -1,10 +1,13 @@
 package projekt.evidencepojisteni;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EvidencePojistenych {
 
     Scanner scanner = new Scanner(System.in);
+    ArrayList<String> seznamPojistenych = new ArrayList<>();
+    protected Pojisteny pojisteny;
 
     public void pridatPojistenyho() {
 
@@ -17,9 +20,20 @@ public class EvidencePojistenych {
         System.out.println("Zadejte věk: ");
         int vek = Integer.parseInt(scanner.nextLine());
 
+        seznamPojistenych.add(pojisteny.toString());
+
         System.out.println();
         System.out.println("Data byla uložena. Pokračujte libovolnou klávesou...");
         System.out.println();
+
+    }
+
+    public void vypsatVsechnyPojistene() {
+
+        System.out.println("Seznam všech pojištěných:");
+        for (String seznam : seznamPojistenych) {
+            System.out.println(seznam);
+        }
 
     }
 

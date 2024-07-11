@@ -28,7 +28,7 @@ public class Main {
                     evidencePojistenych.pridatPojistenyho();
                     break;
                 case 2:
-                    System.out.println();
+                    evidencePojistenych.vypsatVsechnyPojistene();
                     break;
                 case 3:
                     System.out.println();
