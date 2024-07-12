@@ -38,9 +38,34 @@ public class EvidencePojistenych {
                 System.out.println(seznam);
             }
         }
+        System.out.println();
         System.out.println("Pokračujte libovolnou klávesou...");
         System.out.println();
 
+    }
+
+    public void vyhledatPojisteneho() {
+
+        System.out.println("Zadejte jméno pojištěného: ");
+        String zadejJmeno = scanner.nextLine();
+        System.out.println("Zadejte příjmení: ");
+        String zadejPrijmeni = scanner.nextLine();
+        System.out.println();
+
+        boolean najit = false;
+        for (Pojisteny seznam : seznamPojistenych) {
+            if ((seznam.getJmeno().equalsIgnoreCase(zadejJmeno)) && (seznam.getPrijmeni().equalsIgnoreCase(zadejPrijmeni))) {
+                System.out.println(seznam);
+                najit = true;
+                break;
+            }
+        }
+        if (!najit) {
+            System.out.println("Pojištěný nebyl nalezen.");
+        }
+
+        System.out.println();
+        System.out.println("Pokračujte libovolnou klávesou...");
     }
 
 }

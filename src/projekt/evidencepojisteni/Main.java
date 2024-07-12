@@ -31,7 +31,7 @@ public class Main {
                     evidencePojistenych.vypsatVsechnyPojistene();
                     break;
                 case 3:
-                    System.out.println();
+                    evidencePojistenych.vyhledatPojisteneho();
                     break;
                 case 4:
                     pokracuje = false;

@@ -26,6 +26,14 @@ public class Pojisteny {
         this.telefonniCislo = telefonniCislo;
     }
 
+    public String getJmeno() {
+        return jmeno;
+    }
+
+    public String getPrijmeni() {
+        return prijmeni;
+    }
+
     @Override
     public String toString() {
         return jmeno + "    " + prijmeni + "    " + vek + "    " + telefonniCislo;
