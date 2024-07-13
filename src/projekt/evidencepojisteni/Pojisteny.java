@@ -7,6 +7,7 @@ public class Pojisteny {
     private int vek;
     private String telefonniCislo;
 
+    //Konstruktor
     public Pojisteny(String jmeno, String prijmeni, int vek, String telefonniCislo) {
         if (jmeno == null || jmeno.trim().isEmpty()) {
             throw new IllegalArgumentException("Jméno musí být vyplněno!");
@@ -34,9 +35,17 @@ public class Pojisteny {
         return prijmeni;
     }
 
+    public int getVek() {
+        return vek;
+    }
+
+    public String getTelefonniCislo() {
+        return telefonniCislo;
+    }
+
     @Override
     public String toString() {
-        return jmeno + "    " + prijmeni + "    " + vek + "    " + telefonniCislo;
+        return jmeno + " " + prijmeni + " " + vek + " " + telefonniCislo;
     }
 
 }

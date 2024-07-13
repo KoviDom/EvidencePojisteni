@@ -25,13 +25,34 @@ public class Main {
 
             switch (volba) {
                 case 1:
-                    evidencePojistenych.pridatPojistenyho();
+                    System.out.println("Zadejte jméno pojištěnýho: ");
+                    String jmeno = scanner.nextLine();
+                    System.out.println("Zadejte příjmení: ");
+                    String prijmeni = scanner.nextLine();
+                    System.out.println("Zadejte telefonní číslo: ");
+                    String telefonniCislo = scanner.nextLine();
+                    System.out.println("Zadejte věk: ");
+                    int vek = Integer.parseInt(scanner.nextLine());
+                    evidencePojistenych.pridatPojistenyho(jmeno, prijmeni, vek, telefonniCislo);
+                    System.out.println();
+                    System.out.println("Data byla uložena. Pokračujte libovolnou klávesou...");
+                    System.out.println();
                     break;
                 case 2:
                     evidencePojistenych.vypsatVsechnyPojistene();
+                    System.out.println();
+                    System.out.println("Pokračujte libovolnou klávesou...");
+                    System.out.println();
                     break;
                 case 3:
-                    evidencePojistenych.vyhledatPojisteneho();
+                    System.out.println("Zadejte jméno pojištěného: ");
+                    String zadejJmeno = scanner.nextLine();
+                    System.out.println("Zadejte příjmení: ");
+                    String zadejPrijmeni = scanner.nextLine();
+                    System.out.println();
+                    evidencePojistenych.vyhledatPojisteneho(zadejJmeno, zadejPrijmeni);
+                    System.out.println();
+                    System.out.println("Pokračujte libovolnou klávesou...");
                     break;
                 case 4:
                     pokracuje = false;

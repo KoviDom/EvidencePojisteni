@@ -1,33 +1,20 @@
 package projekt.evidencepojisteni;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class EvidencePojistenych {
 
-    Scanner scanner = new Scanner(System.in);
     ArrayList<Pojisteny> seznamPojistenych = new ArrayList<>();
 
-    public void pridatPojistenyho() {
-
-        System.out.println("Zadejte jméno pojištěnýho: ");
-        String jmeno = scanner.nextLine();
-        System.out.println("Zadejte příjmení: ");
-        String prijmeni = scanner.nextLine();
-        System.out.println("Zadejte telefonní číslo: ");
-        String telefonniCislo = scanner.nextLine();
-        System.out.println("Zadejte věk: ");
-        int vek = Integer.parseInt(scanner.nextLine());
+    //Přidá se pojištěný do seznamu
+    public void pridatPojistenyho(String jmeno, String prijmeni, int vek, String telefonniCislo) {
 
         Pojisteny pojisteny = new Pojisteny(jmeno, prijmeni, vek, telefonniCislo);
         seznamPojistenych.add(pojisteny);
 
-        System.out.println();
-        System.out.println("Data byla uložena. Pokračujte libovolnou klávesou...");
-        System.out.println();
-
     }
 
+    //Vypíše všechny pojištěné, co jsou ve seznamu
     public void vypsatVsechnyPojistene() {
 
         if (seznamPojistenych.isEmpty()) {
@@ -35,27 +22,19 @@ public class EvidencePojistenych {
         } else {
             System.out.println("Seznam všech pojištěných:");
             for (Pojisteny seznam : seznamPojistenych) {
-                System.out.println(seznam);
+                formatovaniTextu(seznam);
             }
         }
-        System.out.println();
-        System.out.println("Pokračujte libovolnou klávesou...");
-        System.out.println();
 
     }
 
-    public void vyhledatPojisteneho() {
-
-        System.out.println("Zadejte jméno pojištěného: ");
-        String zadejJmeno = scanner.nextLine();
-        System.out.println("Zadejte příjmení: ");
-        String zadejPrijmeni = scanner.nextLine();
-        System.out.println();
+    //Vyhledá pojištěnýho, který je v seznamu
+    public void vyhledatPojisteneho(String zadejJmeno, String zadejPrijmeni) {
 
         boolean najit = false;
         for (Pojisteny seznam : seznamPojistenych) {
             if ((seznam.getJmeno().equalsIgnoreCase(zadejJmeno)) && (seznam.getPrijmeni().equalsIgnoreCase(zadejPrijmeni))) {
-                System.out.println(seznam);
+                formatovaniTextu(seznam);
                 najit = true;
                 break;
             }
@@ -63,9 +42,11 @@ public class EvidencePojistenych {
         if (!najit) {
             System.out.println("Pojištěný nebyl nalezen.");
         }
+    }
 
-        System.out.println();
-        System.out.println("Pokračujte libovolnou klávesou...");
+    //Formátování textu při výpisu nebo vyhledávání pojištěných
+    private void formatovaniTextu(Pojisteny seznam) {
+        System.out.printf("%-10s %-10s %-5d %-10s%n", seznam.getJmeno(), seznam.getPrijmeni(), seznam.getVek(), seznam.getTelefonniCislo());
     }
 
 }
