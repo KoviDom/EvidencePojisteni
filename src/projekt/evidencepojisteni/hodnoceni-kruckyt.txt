@@ -1,0 +1,13 @@
+Ceníme si vaší práce na projektu! 🏆 Prohlédli jsme si kód a máme k němu následující poznámky:
+
+	1.	Pojmenování identifikátorů - OK
+	2.	Dodržení principů SRP a SoC - Třída EvidencePojistenych toho dělá podstatně víc, než by měla. Slouží jako úložiště pojištěných a zároveň tiskne do konzole. V aplikacích bychom měli dodržovat princip SRP (Single Responsibility Principle), který říká, že třída/objekt by měla být zodpovědná pouze za jednu specifickou činnost. Princip SoC (Separation of Concerns) nám zase říká, že bychom měli rozdělit třídy podle jejich odpovědností, aby každá třída řešila pouze jednu oblast nebo činnost.
+	3.	Vhodný výběr datových typů - Jedna ze zásad dobré programátorské praxe nám říká, že bychom měli programovat proti rozhraní, a ne proti implementaci. Ve třídě EvidencePojistenych není vybrán správný datový typ pro seznamPojistenych, protože ArrayList je konkrétní implementace. Místo toho by bylo vhodnější použít List.
+	4.	Formátování kódu - OK
+	5.	Duplicitní kód a nekonečné cykly - V rámci metody main máme opakující se kód pro zadávání jména. Tento kód by bylo možné vyčlenit do samostatné metody a tu následně volat na několika místech.
+	6.	Validace vstupních dat - Snaha o validaci zde je, ale způsob, jakým je provedena, není ideální, protože vyhazovaná výjimka může shodit celou aplikaci. Takové chování je nežádoucí, a proto bychom měli výjimky zachytávat pomocí bloku try/catch.
+	7.	Logičnost a složitost - Validaci, například prázdného jména, bych neřešil ve třídě Pojisteny, ale spíše na místě, kde k problému může dojít, což je v tomto případě při zadávání jména uživatelem.
+	8.	Komentáře - OK
+	9.	Celkové hodnocení - Na aplikaci je vidět kus práce, ale stále je co zlepšovat. Doporučuji se nyní zaměřit na best practices pro návrh softwaru. Držím palce a přeji mnoho úspěchů.
+
+Doporučujeme opravit zmíněné nedostatky v kódu, abyste jej mohli prezentovat budoucímu zaměstnavateli v co nejlepší kvalitě. Pokud byste potřebovali s čímkoli pomoci, naplánujte si s námi konzultaci, rádi vám poradíme!
